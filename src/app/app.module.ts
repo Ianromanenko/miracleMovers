@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule} from "@angular/forms";
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -13,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireAuthModule} from "angularfire2/auth";
+import { AngularFireDatabaseModule} from "angularfire2/database";
 
 
 @NgModule({
@@ -20,14 +22,16 @@ import { AngularFireAuthModule} from "angularfire2/auth";
     MyApp, 
     AboutPage,
     ContactPage,
-    TabsPage
+    TabsPage,
   
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    FormsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
