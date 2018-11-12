@@ -18,4 +18,8 @@ export class AppointmentListService {
     addAppointment(appointment: Appointment) {
         return this.appointmentListRef.push(appointment);
     }
+
+    editAppointment(appointment: Appointment) {
+        return this.appointmentListRef.update(appointment.key, appointment);
+    }
 }

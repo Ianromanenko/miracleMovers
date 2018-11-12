@@ -1,0 +1,37 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Edit Appointment</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input [(ngModel)]="appointment.firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input [(ngModel)]="appointment.lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Price</ion-label>
+        <ion-input [(ngModel)]="appointment.price" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Adress</ion-label>
+        <ion-input [(ngModel)]="appointment.adress"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>House type</ion-label>
+        <ion-select [(ngModel)]="appointment.houseType">
+            <ion-option value="house">House</ion-option>
+            <ion-option value="appartment">Appartment</ion-option>
+            <ion-option value="loundry">Loundry</ion-option>
+            <ion-option value="commercial">Commercial</ion-option>
+        </ion-select>
+    </ion-item>
+    <button ion-button block clear (click)="saveAppointment(appointment)">Save</button>
+</ion-content>

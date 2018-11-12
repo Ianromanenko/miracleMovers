@@ -1,0 +1,36 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Estimates</ion-title>
+        <ion-buttons end>
+            <button navPush="AddEstimatePage" ion-button>
+            <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item *ngFor="let estimate of estimateList | async" detail-push navPush="EditEstimatePage" [navParams]="{estimate: estimate}">
+
+            <ion-card>
+                <ion-card-header>
+                    Adress: {{estimate.adress | json}}
+                </ion-card-header>
+                <ion-card-content>
+                    <p>First Name: {{estimate.firstName | json}}</p>
+                    <p>Last Name: {{estimate.lastName | json}}</p>
+                    <p>Price: {{estimate.price | json}}</p>
+                    <p>Adress: {{estimate.adress | json}}</p>
+                    <p>House Type: {{estimate.houseType | json}}</p>
+                    <button ion-button clear block (click)="proceedEstimate(estimate)">Proceed to appointments</button>
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

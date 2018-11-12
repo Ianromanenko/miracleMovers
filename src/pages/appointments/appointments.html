@@ -4,8 +4,8 @@
         <ion-title>Appointments</ion-title>
         <ion-buttons end>
             <button navPush="AddAppointmentPage" ion-button>
-        <ion-icon name="add"></ion-icon>
-      </button>
+            <ion-icon name="add"></ion-icon>
+            </button>
         </ion-buttons>
     </ion-navbar>
 
@@ -15,7 +15,7 @@
 <ion-content padding>
     <ion-list>
 
-        <ion-item *ngFor="let appointment of appointmentList | async">
+        <ion-item *ngFor="let appointment of appointmentList | async" detail-push navPush="EditAppointmentPage" [navParams]="{appointment: appointment}">
 
             <ion-card>
                 <ion-card-header>
