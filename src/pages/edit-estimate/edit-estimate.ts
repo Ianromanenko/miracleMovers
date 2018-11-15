@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Estimate } from '../../models/estimate';
 import { EstimateListService } from '../../services/estimate-list/estimate-list.service';
+import { EstimatesPage } from '../estimates/estimates';
 
 
 @IonicPage()
@@ -28,6 +29,14 @@ export class EditEstimatePage {
       this.navCtrl.setRoot('EstimatesPage');
     })
     }
+
+  removeEstimate(estimate: Estimate) {
+    this.estim.removeEstimate(estimate)
+    .then(() => {
+      this.navCtrl.setRoot(EstimatesPage);
+    })
+  }
+
   }
 
 

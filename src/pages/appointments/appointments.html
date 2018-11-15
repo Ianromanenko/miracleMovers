@@ -13,24 +13,37 @@
 
 
 <ion-content padding>
-    <ion-list>
-
-        <ion-item *ngFor="let appointment of appointmentList | async" detail-push navPush="EditAppointmentPage" [navParams]="{appointment: appointment}">
-
-            <ion-card>
-                <ion-card-header>
-                    Adress: {{appointment.adress | json}}
-                </ion-card-header>
-                <ion-card-content>
-                    <p>First Name: {{appointment.firstName | json}}</p>
-                    <p>Last Name: {{appointment.lastName | json}}</p>
-                    <p>Price: {{appointment.price | json}}</p>
-                    <p>Adress: {{appointment.adress | json}}</p>
-                    <p>House Type: {{appointment.houseType | json}}</p>
-                </ion-card-content>
-            </ion-card>
-        </ion-item>
-
-
-    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                <ion-list>
+                    <ion-item *ngFor="let appointment of appointmentList | async" detail-push navPush="EditAppointmentPage" [navParams]="{appointment: appointment}">
+                        <ion-card>
+                            <ion-card-header>
+                                Adress: {{appointment.adress | json}}
+                            </ion-card-header>
+                            <ion-card-content>
+                                <p>First Name: {{appointment.firstName | json}}</p>
+                                <p>Last Name: {{appointment.lastName | json}}</p>
+                                <p>Phone number: {{appointment.phone | json}}</p>
+                                <p>Price: {{appointment.price | json}}</p>
+                                <p>Adress: {{appointment.adress | json}}</p>
+                                <p>House Type: {{appointment.houseType | json}}</p>
+                                <p>Services: {{appointment.services | json}}</p>
+                                <p>Appox. Sq Ft: {{appointment.sqFrOfHome | json}}</p>
+                                <p>Furnace number: {{appointment.furnaceNumb | json}}</p>
+                                <p>Furnace location: {{appointment.furnaceLoc | json}}</p>
+                                <p>Vents number: {{appointment.ventsNumb | json}}</p>
+                                <p>Parking: {{appointment.parkingType | json}}</p>
+                                <p>Comments: {{appointment.comments | json}}</p>
+                                <button ion-button block clear color="danger" (click)="removeAppointment(appointment)">Delete</button>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+            <ion-col col-4>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

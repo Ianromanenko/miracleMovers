@@ -22,4 +22,7 @@ export class AppointmentListService {
     editAppointment(appointment: Appointment) {
         return this.appointmentListRef.update(appointment.key, appointment);
     }
+    removeAppointment(appointment: Appointment) {
+        return this.appointmentListRef.remove(appointment.key);
+    }
 }

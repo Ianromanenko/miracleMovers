@@ -8,34 +8,105 @@
 
 
 <ion-content padding>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-3></ion-col>
+            <ion-col col-6>
+                <ion-item>
+                    <ion-label>Date</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="appointment.date"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Time</ion-label>
+                    <ion-datetime displayFormat="HH:mm" [(ngModel)]="appointment.time"></ion-datetime>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>First Name</ion-label>
+                    <ion-input [(ngModel)]="appointment.firstName"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Last Name</ion-label>
+                    <ion-input [(ngModel)]="appointment.lastName"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Phone number</ion-label>
+                    <ion-input [(ngModel)]="appointment.phone" type="number"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Price</ion-label>
+                    <ion-input [(ngModel)]="appointment.price" type="number"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Adress</ion-label>
+                    <ion-input [(ngModel)]="appointment.adress"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Services</ion-label>
+                    <ion-select [(ngModel)]="appointment.services">
+                        <ion-option value="Central vacuum">Central vacuum</ion-option>
+                        <ion-option value="Dryer vent">Dryer vent</ion-option>
+                        <ion-option value="Post contruction">Post contruction</ion-option>
+                        <ion-option value="Commercial">Commercial</ion-option>
+                        <ion-option value="Carpet cleaning">Carpet cleaningl</ion-option>
 
-    <ion-item>
-        <ion-label floating>First Name</ion-label>
-        <ion-input [(ngModel)]="appointment.firstName"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>Last Name</ion-label>
-        <ion-input [(ngModel)]="appointment.lastName"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>Price</ion-label>
-        <ion-input [(ngModel)]="appointment.price" type="number"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>Adress</ion-label>
-        <ion-input [(ngModel)]="appointment.adress"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>House type</ion-label>
-        <ion-select [(ngModel)]="appointment.houseType">
-            <ion-option value="house">House</ion-option>
-            <ion-option value="appartment">Appartment</ion-option>
-            <ion-option value="loundry">Loundry</ion-option>
-            <ion-option value="commercial">Commercial</ion-option>
-        </ion-select>
-    </ion-item>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Appox. Sq Ft </ion-label>
+                    <ion-select [(ngModel)]="appointment.sqFrOfHome">
+                        <ion-option value="Up to 2000">Up to 2000</ion-option>
+                        <ion-option value="2000-2500">2000-2500</ion-option>
+                        <ion-option value="2500-3000">2500-3000</ion-option>
+                        <ion-option value="3000-3500">3000-3500</ion-option>
+                        <ion-option value="3500-4000">3500-4000</ion-option>
+                        <ion-option value="4000+">4000+</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Furnace number</ion-label>
+                    <ion-input [(ngModel)]="appointment.furnaceNumb" type="number"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>House type</ion-label>
+                    <ion-select [(ngModel)]="appointment.houseType">
+                        <ion-option value="House">House</ion-option>
+                        <ion-option value="Appartment">Appartment</ion-option>
+                        <ion-option value="Loundry">Loundry</ion-option>
+                        <ion-option value="Commercial">Commercial</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Furnace location</ion-label>
+                    <ion-select [(ngModel)]="appointment.furnaceLoc">
+                        <ion-option value="Basement">Basement</ion-option>
+                        <ion-option value="Main floor">Main floor</ion-option>
+                        <ion-option value="Attic">Attic</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Vents number</ion-label>
+                    <ion-input [(ngModel)]="appointment.ventsNumb" type="number"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Parking</ion-label>
+                    <ion-select [(ngModel)]="appointment.parkingType">
+                        <ion-option value="Street parking">Street parking</ion-option>
+                        <ion-option value="Driveway">Driveway</ion-option>
+                        <ion-option value="Parking pad">Parking pad</ion-option>
+                        <ion-option value="No parking">No parking</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Comments</ion-label>
+                    <ion-input [(ngModel)]="appointment.comments"></ion-input>
+                </ion-item>
 
-    {{appointment | json}}
-    <button ion-button block clear (click)="addAppointment(appointment)">Add</button>
 
+                {{appointment | json}}
+                <button ion-button block clear (click)="addAppointment(appointment)">Add</button>
+            </ion-col>
+            <ion-col col-3></ion-col>
+
+        </ion-row>
+    </ion-grid>
 </ion-content>

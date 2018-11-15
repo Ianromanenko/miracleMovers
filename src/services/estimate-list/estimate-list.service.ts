@@ -29,4 +29,7 @@ export class EstimateListService {
         return this.estimateListRef.update(estimate.key, estimate);
     }
 
+    removeEstimate(estimate: Estimate) {
+        return this.estimateListRef.remove(estimate.key);
+    }
 }

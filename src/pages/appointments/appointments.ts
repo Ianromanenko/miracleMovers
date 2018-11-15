@@ -27,6 +27,11 @@ export class AppointmentsPage {
           }))
       })
   }
-
+  removeAppointment(appointment: Appointment) {
+    this.appoint.removeAppointment(appointment)
+    .then(() => {
+      this.navCtrl.setRoot(AppointmentsPage);
+    })
+  }
   
 }

@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Estimate } from '../../models/estimate';
 import { EstimateListService } from '../../services/estimate-list/estimate-list.service';
 
-
 @IonicPage()
 @Component({
   selector: 'page-add-estimate',
@@ -28,5 +27,5 @@ export class AddEstimatePage {
       this.navCtrl.setRoot('EstimatesPage', {key: ref.key})
     })
   }
-
+  
 }

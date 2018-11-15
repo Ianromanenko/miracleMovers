@@ -28,4 +28,10 @@ export class EditAppointmentPage {
     })
   }
 
+  removeAppointmen(appointment: Appointment) {
+    this.appoint.removeAppointment(appointment)
+    .then(() => {
+      this.navCtrl.setRoot('AppointmentsPage');
+    })
+  }
 }

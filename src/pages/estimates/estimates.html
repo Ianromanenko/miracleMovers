@@ -13,24 +13,39 @@
 
 
 <ion-content padding>
-
-    <ion-list>
-        <ion-item *ngFor="let estimate of estimateList | async" detail-push navPush="EditEstimatePage" [navParams]="{estimate: estimate}">
-
-            <ion-card>
-                <ion-card-header>
-                    Adress: {{estimate.adress | json}}
-                </ion-card-header>
-                <ion-card-content>
-                    <p>First Name: {{estimate.firstName | json}}</p>
-                    <p>Last Name: {{estimate.lastName | json}}</p>
-                    <p>Price: {{estimate.price | json}}</p>
-                    <p>Adress: {{estimate.adress | json}}</p>
-                    <p>House Type: {{estimate.houseType | json}}</p>
-                    <button ion-button clear block (click)="proceedEstimate(estimate)">Proceed to appointments</button>
-                </ion-card-content>
-            </ion-card>
-        </ion-item>
-    </ion-list>
-
+    <ion-grid>
+        <ion-row>
+            <ion-col col-4>
+                <ion-list>
+                    <ion-item *ngFor="let estimate of estimateList | async" detail-push navPush="EditEstimatePage" [navParams]="{estimate: estimate}">
+                        <ion-card>
+                            <ion-card-header>
+                                Adress: {{estimate.adress | json}}
+                            </ion-card-header>
+                            <ion-card-content>
+                                <p>First Name: {{estimate.firstName | json}}</p>
+                                <p>Last Name: {{estimate.lastName | json}}</p>
+                                <p>Phone number: {{estimate.phone | json}}</p>
+                                <p>Price: {{estimate.price | json}}</p>
+                                <p>Adress: {{estimate.adress | json}}</p>
+                                <p>House Type: {{estimate.houseType | json}}</p>
+                                <p>Services: {{estimate.services | json}}</p>
+                                <p>Appox. Sq Ft: {{estimate.sqFrOfHome | json}}</p>
+                                <p>Furnace number: {{estimate.furnaceNumb | json}}</p>
+                                <p>Furnace location: {{estimate.furnaceLoc | json}}</p>
+                                <p>Vents number: {{estimate.ventsNumb | json}}</p>
+                                <p>Parking: {{estimate.parkingType | json}}</p>
+                                <p>Comments: {{estimate.comments | json}}</p>
+                                <p>Date: {{estimate.date | json}}</p>
+                                <p>Time: {{estimate.time | json}}</p>
+                                <button ion-button clear block (click)="proceedEstimate(estimate)">Proceed to appointments</button>
+                                <button ion-button block clear color="danger" (click)="removeEstimate(estimate)">Delete</button> </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+            <ion-col col-4>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

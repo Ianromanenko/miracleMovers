@@ -34,9 +34,17 @@ export class EstimatesPage {
   }
 
  proceedEstimate(estimate: Estimate) {
-    this.estim.proceedEstimate(estimate).then(ref => {
+    this.estim.proceedEstimate(estimate)
+    .then(ref => {
       console.log(ref.key)
       this.navCtrl.setRoot('EstimatesPage', {key: ref.key})
+    })
+    this.estim.removeEstimate(estimate)
+  }
+  removeEstimate(estimate: Estimate) {
+    this.estim.removeEstimate(estimate)
+    .then(() => {
+      this.navCtrl.setRoot(EstimatesPage);
     })
   }
 
